@@ -1,6 +1,6 @@
 module.exports = {
 
-    name: 'payslip',
+    name: 'payslips',
     fields: [
         {
             name: 'email',

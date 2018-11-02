@@ -10,12 +10,16 @@ module.exports = {
 
         console.log("***********************Entered issuePaySlip************************")
 
-        var result = await app.model.Payslip.findOne({
-            empid: empid,
-            employer: employer,
-            month: month,
-            year: year
-        });
+        var options = {
+            condition: {
+                empid: empid,
+                employer: employer,
+                month: month,
+                year: year
+            }
+        }
+
+        var result = await app.model.Payslip.findOne(options);
 
         if(result) return "Payslip already issued";
 

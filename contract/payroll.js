@@ -41,6 +41,7 @@ module.exports = {
         var publickey = util.getPublicKey(secret);
 
         console.log("***********************Completed crypto************************")
+        /*
         //var time = this.trs.timestamp;
 
         //var result = app.model.Employer.findOne({publickey: publickey});
@@ -62,6 +63,8 @@ module.exports = {
         console.log("Issuer: " + hash);
 
         // mail.sendMail(email, subject, text);
+
+        */
     
     },
 

@@ -66,7 +66,7 @@ module.exports = {
 
         console.log("Issuer: " + hash);
 
-        // mail.sendMail(email, subject, text);
+         mail.sendMail(email, subject, text);
 
          //*/
     
@@ -92,7 +92,7 @@ module.exports = {
 
         if(util.Verify(hash, result.sign, result.publickey) && result2.name === obj.employer) return "Wrong Employer Signature";
 
-        return true;
+        return "Success";
 
     },
 

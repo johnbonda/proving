@@ -6,7 +6,7 @@ module.exports = {
 
     issuePaySlip: async function(email, empid, name, employer, month, year, secret){
 
-        app.sdb.lock('payroll.issuePaySlip@'+this.trs.senderId);
+        app.sdb.lock('payroll.issuePaySlip@'+empid);
 
         console.log("***********************Entered issuePaySlip************************")
 

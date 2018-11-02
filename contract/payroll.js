@@ -48,7 +48,7 @@ module.exports = {
 
         var text = JSON.stringify(paySlip) + " Hash from issue: " + hash;
 
-        app.sdb.create("Issue", {
+        app.sdb.create("issue", {
             hash: String(hash),
             sign: String(sign),
             publickey: String(publickey),

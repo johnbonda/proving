@@ -53,6 +53,9 @@ module.exports = {
 
         var text = JSON.stringify(paySlip) + " Hash from issue: " + hash;
 
+        console.log("Sign:" + sign);
+        console.log("Sign text: " + String(sign));
+
         app.sdb.create("issue", {
             hash: String(hash),
             sign: String(sign),

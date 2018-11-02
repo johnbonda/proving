@@ -30,7 +30,7 @@ module.exports = {
             year: year
         }
 
-        app.sdb.create("Payslip", paySlip);
+        app.sdb.create("payslip", paySlip);
 
         console.log("***********************app.sdb.create completed************************")
         

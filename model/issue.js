@@ -1,7 +1,8 @@
 module.exports = {
     name: "issues",
     fields: [
-        {  name: 'hash',
+        {  
+            name: 'hash',
             type: 'String',
             length: 1000,
         },

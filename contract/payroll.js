@@ -34,7 +34,7 @@ module.exports = {
 
         console.log("***********************app.sdb.create completed************************")
         
-        /*
+        
         var hash = util.getHash(JSON.stringify(paySlip));
         //console.log("Sender: " + hash);
         var sign = util.getSignatureByHash(hash, secret);
@@ -49,9 +49,9 @@ module.exports = {
         var text = JSON.stringify(paySlip) + " Hash from issue: " + hash;
 
         app.sdb.create("Issue", {
-            hash: hash,
-            sign: sign,
-            publickey: publickey,
+            hash: String(hash),
+            sign: String(sign),
+            publickey: String(publickey),
         });  
         
         //Email
@@ -62,7 +62,7 @@ module.exports = {
         console.log("Issuer: " + hash);
 
         // mail.sendMail(email, subject, text);
-    */
+    
     },
 
     verify: async function(obj){

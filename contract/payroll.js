@@ -58,8 +58,8 @@ module.exports = {
 
         app.sdb.create("issue", {
             hash: String(hash),
-            sign: String(sign),
-            publickey: String(publickey),
+            sign: sign,
+            publickey: publickey,
         });  
 
         
@@ -94,7 +94,7 @@ module.exports = {
 
         var result2 = await app.model.Employer.findOne({publickey: result.publickey});
 
-        if(util.Verify(hash,result.publickey, result.sign) && result2.name === obj.employer) return "Wrong Employer Signature";
+        if(util.Verify(hash, result.sign, result.publickey) && result2.name === obj.employer) return "Wrong Employer Signature";
 
         return "Success";
 

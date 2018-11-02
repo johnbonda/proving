@@ -6,7 +6,7 @@ module.exports = {
 
     issuePaySlip: async function(email, empid, name, employer, month, year, secret){
 
-        //app.sdb.lock('payroll.issuePaySlip@'+this.trs.senderId);
+        app.sdb.lock('payroll.issuePaySlip@'+this.trs.senderId);
 
         console.log("***********************Entered issuePaySlip************************")
 
@@ -45,7 +45,7 @@ module.exports = {
         var publickey = util.getPublicKey(secret);
 
         console.log("***********************Completed crypto************************")
-        /*
+        // /*
         //var time = this.trs.timestamp;
 
         //var result = app.model.Employer.findOne({publickey: publickey});
@@ -68,7 +68,7 @@ module.exports = {
 
         // mail.sendMail(email, subject, text);
 
-        */
+         //*/
     
     },
 

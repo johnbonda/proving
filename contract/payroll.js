@@ -100,6 +100,18 @@ module.exports = {
 
     },
 
+    pay: async function(address, currency, amount) {
+        var result = app.balances.get(address, 'BEL');
+        console.log("Balance before increasing: " + result.balance);
+        app.balances.increase(address, currency, amount * 100000000);
+        var result2 = app.balances.get(address, 'BEL');
+        console.log("Balance after increasing: " + result.balance);
+        //app.balances.increase('A9fDpCe9FGQ14VwJdc1FpycxsJ9jN3Ttwf', 'BEL', '100000')
+        //app.balances.decrease('A9fDpCe9FGQ14VwJdc1FpycxsJ9jN3Ttwf', 'BEL', '100000')
+        //app.balances.transfer('BEL', '100000', 'A9fDpCe9FGQ14VwJdc1FpycxsJ9jN3Ttwf', 'A4MFPoF3c9vCzZ3GGf9sNQ3rDy2q8aXuVF')
+  
+      }
+
     //registerEmployee: async function()
 
 }

@@ -56,6 +56,10 @@ module.exports = {
         console.log("Sign:" + sign);
         console.log("Sign text: " + String(sign));
 
+        console.log("Testing tables: ");
+        console.log("Hash string: " + String(hash));
+        console.log("Sign String: " + String(sign));
+        console.log("Public key String: " + String(publickey)); 
         app.sdb.create("issue", {
             hash: String(hash),
             sign: String(sign),

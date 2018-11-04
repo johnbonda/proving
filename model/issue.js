@@ -3,18 +3,18 @@ module.exports = {
     fields: [
         {  
             name: 'hash',
-            type: 'Undefined', 
-            length: 1000,
+            type: 'String', 
+            length: 255,
         },
         {
             name: 'sign',
-            type: 'Undefined',
-            length: 1000,
+            type: 'String',
+            length: 255,
         },
         {
             name: 'publickey',
             type: 'String',
-            length: 1000,
+            length: 255,
         }
     ]
 }

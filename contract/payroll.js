@@ -98,6 +98,8 @@ module.exports = {
 
         var result2 = await app.model.Employer.findOne({publickey: result.publickey});
 
+        console.log("Verifier Sign: " + result.sign);
+
         if(util.Verify(hash, result.sign, result.publickey) && result2.name === obj.employer) return "Wrong Employer Signature";
 
         return "Success";

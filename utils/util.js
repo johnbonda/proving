@@ -17,9 +17,10 @@ module.exports = {
     },
     
     Verify: function (hash, signature, publicKey) {
-        var signatureBuffer = new Buffer(signature);
-        var publicKeyBuffer = new Buffer(publicKey);
-        return sodium.crypto_sign_verify_detached(signatureBuffer, hash, publicKeyBuffer);
+        //var signatureBuffer = new Buffer(signature);
+        //var publicKeyBuffer = new Buffer(publicKey);
+        //return sodium.crypto_sign_verify_detached(signatureBuffer, hash, publicKeyBuffer);
+        return sodium.crypto_sign_verify_detached(signature, hash, publicKey);
     },
 
     getHash: function(data){

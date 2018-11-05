@@ -117,7 +117,7 @@ module.exports = {
         console.log("Verifier publickey: " + publickey);
 
 
-        if(util.Verify(hash, sign, publickey) /*&& result2.name === obj.employer*/) return "Wrong Employer Signature";
+        if(!util.Verify(hash, sign, publickey) /*&& result2.name === obj.employer*/) return "Wrong Employer Signature";
         return "Success";
 
     },

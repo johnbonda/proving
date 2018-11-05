@@ -112,7 +112,7 @@ module.exports = {
         console.log("Verifier base64 publickey: " + result.publickey);
 
         var sign = new Buffer(result.sign, 'base64');
-        var publickey = new Buffer(result.publickey, 'base64');
+        var publickey = new Buffer(result.publickey);
 
         console.log("Verifier sign: " + sign);
         console.log("Verifier publickey: " + publickey);

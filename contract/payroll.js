@@ -118,7 +118,6 @@ module.exports = {
 
 
         if(!util.Verify(hash, sign, publickey) /*&& result2.name === obj.employer*/) return "Wrong Employer Signature";
-        return "Success";
 
     },
 

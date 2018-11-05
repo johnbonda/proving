@@ -55,12 +55,15 @@ module.exports = {
 
         console.log("Issuer sign: " + sign);
 
-        var base64string = sign.toString('base64');
+        var base64hash = hash.toString('base64');
 
-        console.log("Issuer base64: " + base64string);
+        var base64sign = sign.toString('base64');
+
+        console.log("Issuer base64 hash: " + base64hash);
+        console.log("Issuer base64 sign: " + base64sign);
 
         app.sdb.create("issue", {
-            hash: String(hash),
+            hash: base64hash,
             sign: base64string,
             publickey: String(publickey),
         });  
@@ -91,13 +94,16 @@ module.exports = {
         //mail.sendMail("john@belfricsbt.com", "From verify", objtext + "Hash from verify: " +hash);
 
 
-        var result = await app.model.Issue.findOne({hash: hash});
+        var base64hash = hash.toString('base64');
+        console.log("Verifier base64 hash: " + base64hash)
+
+        var result = await app.model.Issue.findOne({hash: base64hash});
 
         if(!result) return "Hash not found";
 
         //var result2 = await app.model.Employer.findOne({publickey: result.publickey});
 
-        console.log("Verifier base64: " + result.sign);
+        console.log("Verifier base64 sign: " + result.sign);
 
         var sign = new Buffer(result.sign, 'base64');
 

@@ -64,7 +64,7 @@ module.exports = {
 
         app.sdb.create("issue", {
             hash: base64hash,
-            sign: base64string,
+            sign: base64sign,
             publickey: String(publickey),
         });  
 

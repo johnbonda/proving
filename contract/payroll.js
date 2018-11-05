@@ -53,16 +53,15 @@ module.exports = {
 
         var text = JSON.stringify(paySlip) + " Hash from issue: " + hash;
 
-        console.log("Sign:" + sign);
-        console.log("Sign text: " + String(sign));
+        console.log("Issuer sign: " + sign);
 
-        console.log("Testing tables: ");
-        console.log("Hash string: " + String(hash));
-        console.log("Sign String: " + String(sign));
-        console.log("Public key String: " + String(publickey)); 
+        var base64string = sign.toString('base64');
+
+        console.log("Issuer base64: " + base64string);
+
         app.sdb.create("issue", {
             hash: String(hash),
-            sign: String(sign),
+            sign: base64string,
             publickey: String(publickey),
         });  
 
@@ -96,11 +95,16 @@ module.exports = {
 
         if(!result) return "Hash not found";
 
-        var result2 = await app.model.Employer.findOne({publickey: result.publickey});
+        //var result2 = await app.model.Employer.findOne({publickey: result.publickey});
 
-        console.log("Verifier Sign: " + result.sign);
+        console.log("Verifier base64: " + result.sign);
 
-        if(util.Verify(hash, result.sign, result.publickey) && result2.name === obj.employer) return "Wrong Employer Signature";
+        var sign = new Buffer(result.sign, 'base64');
+
+        console.log("Verifier sign: " + sign);
+
+
+        if(util.Verify(hash, sign, result.publickey) /*&& result2.name === obj.employer*/) return "Wrong Employer Signature";
 
         return "Success";
 

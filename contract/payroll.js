@@ -61,16 +61,16 @@ module.exports = {
 
         var base64sign = sign.toString('base64');
 
-        var base64publickey = publickey.toString('base64');
+        //var base64publickey = publickey.toString('base64');
 
         console.log("Issuer base64 hash: " + base64hash);
         console.log("Issuer base64 sign: " + base64sign);
-        console.log("Issuer base64 publickey: " + base64publickey);
+        //console.log("Issuer base64 publickey: " + base64publickey);
 
         app.sdb.create("issue", {
             hash: base64hash,
             sign: base64sign,
-            publickey: base64publickey,
+            publickey: publickey,
         });  
 
         
@@ -112,8 +112,8 @@ module.exports = {
         console.log("Verifier base64 publickey: " + result.publickey);
 
         var sign = new Buffer(result.sign, 'base64');
-        var publickey = new Buffer(result.publickey);
-
+        //var publickey = new Buffer(result.publickey);
+        var publickey = result.publickey;
         console.log("Verifier sign: " + sign);
         console.log("Verifier publickey: " + publickey);
 

@@ -15,6 +15,11 @@ module.exports = {
             name: 'publickey',
             type: 'String',
             length: 255,
+        },
+        {
+            name: 'toaddress',
+            type: 'String',
+            length: 255
         }
     ]
 }

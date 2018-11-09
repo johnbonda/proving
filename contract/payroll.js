@@ -93,6 +93,7 @@ module.exports = {
         //app.logger.debug(objtext);
         //var obj = JSON.parse(objtext);
         var objtext = JSON.stringify(obj);
+        console.log("objtext " + objtext);
         var hash = util.getHash(objtext);
         console.log("Verifier: " + hash);
         //var hash = util.getHash(objtext);
@@ -103,7 +104,9 @@ module.exports = {
         var base64hash = hash.toString('base64');
         console.log("Verifier base64 hash: " + base64hash)
 
-        var result = await app.model.Issue.findOne({hash: base64hash});
+        var result = await app.model.Issue.findOne({
+            condition: {hash: base64hash}
+        });
 
         if(!result) return "Hash not found";
 

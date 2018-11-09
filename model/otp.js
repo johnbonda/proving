@@ -7,7 +7,7 @@ module.exports = {
             length: 255
         },
         {
-            email: 'email',
+            name: 'email',
             type: 'String',
             length: 255
         }

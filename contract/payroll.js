@@ -134,7 +134,7 @@ module.exports = {
   
     //   },
 
-    issueTo: async function(email, empid, name, employer, month, year, secret){
+   /*  issueTo: async function(email, empid, name, employer, month, year, secret){
         app.sdb.lock('payroll.issueTo@'+empid);
 
         // Checking email is registered with Payroll
@@ -200,6 +200,6 @@ module.exports = {
         console.log("Issuer: " + hash);
 
          mail.sendMail(email, subject, text);
-      }
+      } */
 
 }

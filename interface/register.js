@@ -1,3 +1,5 @@
+var util = require("../utils/util.js");
+
 // returns payslip if exists, takes parameters empid, month , year
 app.route.get('/payslip/issuedOrNot', async function(req){ 
     var obj = {
@@ -17,7 +19,7 @@ app.route.get('/payslip/issuedOrNot', async function(req){
 // For the employee table,
 // GET call
 // inputs: No inputs
-// outputs: empid, name, designation
+// outputs: empid, name, designations
 app.route.get('/employees', async function(req){
     var options = {
         fields: ['empid', 'name', 'designation']

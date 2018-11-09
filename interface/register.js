@@ -50,7 +50,7 @@ app.route.get('/employeeData', async function(req){
 // Verifies the json string
 // inputs: data (contains the stringified json object)
 // outputs: verified or not
-app.route.get('/verifypayslip', async function(req){
+app.route.post('/verifypayslip', async function(req,cb){
         
     //app.logger.debug(objtext);
     //var obj = JSON.parse(objtext);

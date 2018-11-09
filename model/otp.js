@@ -2,7 +2,7 @@ module.exports = {
     name: 'otps',
     fields: [
         {
-            name: 'otp',
+            name: 'otpnumber',
             type: 'String',
             length: 255
         },

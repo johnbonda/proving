@@ -37,14 +37,13 @@ app.route.get('/employees', async function(req){
 app.route.get('/employeeData', async function(req){
     var options = {
         condition: {
-            empid: req.params.empid
+            empID: req.params.empid
         },
         fields: ['email', 'empID', 'name', 'designation', 'salary']
     }
 
     var result = app.model.Employee.findOne(options);
 
-    
     return result;
 })
 

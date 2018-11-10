@@ -56,8 +56,8 @@ app.route.post('/verifypayslip', async function(req,cb){
     //var obj = JSON.parse(objtext);
     //var objtext = JSON.stringify(req.params.data);
     //console.log("Recieved data: " + objtext);
-    console.log("recieving: " + req.params.data);
-    var hash = util.getHash(req.params.data);
+    console.log("recieving: " + req.query.data);
+    var hash = util.getHash(req.query.data);
     //console.log("Verifier: " + hash);
     //var hash = util.getHash(objtext);
 

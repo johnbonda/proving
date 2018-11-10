@@ -81,14 +81,27 @@ app.route.post('/userlogin', async function (req, cb) {
     var ac_params = {
         email: req.query.email,
         password: req.query.password
-    };    var response = await BKVSCall.call('POST', `/api/v1/login`, ac_params);// Call: http://54.254.174.74:8080
+    };
+    var response = await BKVSCall.call('POST', `/api/v1/login`, ac_params);// Call: http://54.254.174.74:8080
     if(response.isSuccess===true)
     {
-        return "success";
+        var params={
+            secret:req.query.secret,
+            countryCode:req.query.countryCode
+        }
+        var innerresponse = await BKVSCall.call('POST', `/api/v1/hyperledger/login`, params);// Call: http://54.254.174.74:8080
+        if(innerresponse.isSuccess===true)
+        {
+            return JSON.stringify(response);
+        }
+        else
+        {
+            return "failed in secret";
+        }
     }
     else
     {
-        return "failed";
+        return "failed in login";
     }
  });//BKVS Signup
  app.route.post('/usersignup', async function (req, cb) {
@@ -101,23 +114,6 @@ app.route.post('/userlogin', async function (req, cb) {
         type:req.query.type
     }
     var response = await BKVSCall.call('POST', `/api/v1/signup`, params);// Call: http://54.254.174.74:8080
-    // if(response.isSuccess===true)
-    // {
-    //     return "success";
-    // }
-    // else
-    // {
-    //     return "failed";
-    // }
-
-    return JSON.stringify(response);
- });//BKVS Signup
- app.route.post('/usersecretLogin', async function (req, cb) {
-    var params={
-        secret:req.query.secret,
-        countryCode:req.query.countryCode
-    }
-    var response = await BKVSCall.call('POST', `/api/v1/hyperledger/login`, params);// Call: http://54.254.174.74:8080
     if(response.isSuccess===true)
     {
         return "success";
@@ -126,5 +122,21 @@ app.route.post('/userlogin', async function (req, cb) {
     {
         return "failed";
     }
- });
+
+ });//BKVS Signup
+//  app.route.post('/usersecretLogin', async function (req, cb) {
+//     var params={
+//         secret:req.query.secret,
+//         countryCode:req.query.countryCode
+//     }
+//     var response = await BKVSCall.call('POST', `/api/v1/hyperledger/login`, params);// Call: http://54.254.174.74:8080
+//     if(response.isSuccess===true)
+//     {
+//         return "success";
+//     }
+//     else
+//     {
+//         return "failed";
+//     }
+//  });
 // KYC Verification``` 

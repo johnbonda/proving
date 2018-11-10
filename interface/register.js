@@ -58,14 +58,14 @@ app.route.post('/verifypayslip', async function(req,cb){
     //console.log("Recieved data: " + objtext);
     console.log("recieving: " + req.params.data);
     var hash = util.getHash(req.params.data);
-    console.log("Verifier: " + hash);
+    //console.log("Verifier: " + hash);
     //var hash = util.getHash(objtext);
 
     //mail.sendMail("john@belfricsbt.com", "From verify", objtext + "Hash from verify: " +hash);
 
 
     var base64hash = hash.toString('base64');
-    console.log("Verifier base64 hash: " + base64hash)
+    //console.log("Verifier base64 hash: " + base64hash)
 
     var result = await app.model.Issue.findOne({
         condition: {hash: base64hash}
@@ -75,13 +75,13 @@ app.route.post('/verifypayslip', async function(req,cb){
 
     //var result2 = await app.model.Employer.findOne({publickey: result.publickey});
 
-    console.log("Verifier base64 sign: " + result.sign);
-    console.log("Verifier base64 publickey: " + result.publickey);
+    //console.log("Verifier base64 sign: " + result.sign);
+    //console.log("Verifier base64 publickey: " + result.publickey);
 
     var sign = new Buffer(result.sign, 'base64');
     var publickey = new Buffer(result.publickey, 'hex');  
-    console.log("Verifier sign: " + sign);
-    console.log("Verifier publickey: " + publickey);
+    //console.log("Verifier sign: " + sign);
+    //console.log("Verifier publickey: " + publickey);
 
 
     if(!util.Verify(hash, sign, publickey) /*&& result2.name === obj.employer*/) return "Wrong Employer Signature";

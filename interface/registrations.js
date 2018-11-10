@@ -77,7 +77,7 @@ app.route.post('/accounts/details', async function(req,cb) {
 });
 
 //BKVS login
-app.route.post('/login', async function (req, cb) {
+app.route.post('/userlogin', async function (req, cb) {
     var ac_params = {
         email: req.query.email,
         password: req.query.password

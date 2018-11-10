@@ -29,7 +29,7 @@ module.exports = {
             //     buffer.writeString(data[x]);
             // }
 
-        buffer.WriteString(data); 
+        buffer.writeCString(data); 
     
             return  crypto.createHash('sha256').update(buffer.toBuffer()).digest();
     },

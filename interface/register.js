@@ -37,7 +37,7 @@ app.route.get('/employees', async function(req){
 app.route.get('/employeeData', async function(req){
     var options = {
         condition: {
-            empID: req.params.empid
+            empID: req.query.empid
         },
         fields: ['email', 'empID', 'name', 'designation', 'salary']
     }

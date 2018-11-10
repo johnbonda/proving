@@ -34,7 +34,7 @@ app.route.get('/employees', async function(req){
 // GET call
 // inputs: empid
 // outputs: email, empid, name, designation, actualsalary
-app.route.get('/employeeData', async function(req){
+app.route.post('/employeeData', async function(req,cb){
     var options = {
         condition: {
             empID: req.query.empid

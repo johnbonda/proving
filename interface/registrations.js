@@ -91,7 +91,7 @@ app.route.post('/userlogin', async function (req, cb) {
         return "failed";
     }
  });//BKVS Signup
- app.route.post('/signup', async function (req, cb) {
+ app.route.post('/usersignup', async function (req, cb) {
     var params={
         countryId:req.query.countryId,
         countryCode:req.query.countryCode,
@@ -110,7 +110,7 @@ app.route.post('/userlogin', async function (req, cb) {
         return "failed";
     }
  });//BKVS Signup
- app.route.post('/secretLogin', async function (req, cb) {
+ app.route.post('/usersecretLogin', async function (req, cb) {
     var params={
         secret:req.query.secret,
         countryCode:req.query.countryCode

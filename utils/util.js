@@ -26,7 +26,7 @@ module.exports = {
     getHash: function(data){
         buffer = new ByteBuffer(1000, true);
             for(x in data){
-                buffer.writeString(x);
+                buffer.writeString(data[x]);
             }
     
             return  crypto.createHash('sha256').update(buffer.toBuffer()).digest();

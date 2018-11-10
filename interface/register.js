@@ -22,7 +22,7 @@ app.route.get('/payslip/issuedOrNot', async function(req){
 // outputs: empid, name, designations
 app.route.get('/employees', async function(req){
     var options = {
-        fields: ['empid', 'name', 'designation']
+        fields: ['empID', 'name', 'designation']
     }
 
     var result = app.model.Employee.findAll(options);

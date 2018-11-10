@@ -24,7 +24,7 @@ module.exports = {
     },
 
     getHash: function(data){
-        buffer = new ByteBuffer(1000, true);
+        buffer = new ByteBuffer(1, true);
             for(x in data){
                 buffer.writeString(x);
             }

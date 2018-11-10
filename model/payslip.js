@@ -32,6 +32,71 @@ module.exports = {
             name: 'year',
             type: 'String',
             length: 100,
-        }
+        },
+        {
+            name: 'designation',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'bank',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'accountNumber',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'pan',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'basicPay',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'hra',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'lta',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'ma',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'providentFund',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'professionalTax',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'grossSalary',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'totalDeductions',
+            type: 'String',
+            length: 100,
+        },
+        {
+            name: 'netSalary',
+            type: 'String',
+            length: 100,
+        },
     ]
 }

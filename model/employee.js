@@ -11,10 +11,29 @@ module.exports = {
             name: 'empID',
             type: 'String',
             length: 255,
-
         },
         {
-            name: 'walletAddress',
+            name: 'name',
+            type: 'String',
+            length: 255,
+        },
+        {
+            name: 'designation',
+            type: 'String',
+            length: 255,
+        },
+        {
+            name: 'bank',
+            type: 'String',
+            length: 255,
+        },
+        {
+            name: 'accountNumber',
+            type: 'String',
+            length: 255,
+        },
+        {
+            name: 'pan',
             type: 'String',
             length: 255,
         },
@@ -22,11 +41,16 @@ module.exports = {
             name: 'salary',
             type: 'String',
             length: 255,
-        },
-        {
-            name: 'token',
-            type: 'String',
-            length: 255
         }
+        // {
+        //     name: 'walletAddress',
+        //     type: 'String',
+        //     length: 255,
+        // },
+        // {
+                //     name: 'token',
+                //     type: 'String',
+                //     length: 255
+                // }
     ]
 }

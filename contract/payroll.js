@@ -5,7 +5,7 @@ var api = require("../utils/api");
 
 module.exports = {
 
-    issuePaySlip: async function(email, empid, name, employer, month, year, secret){
+    issuePaySlip: async function(email, empid, name, employer, month, year, designation, bank, accountNumber, pan, basicPay, hra, lta, ma, providentFund, professionalTax, grossSalary, totalDeductions, netSalary, secret){
 
         app.sdb.lock('payroll.issuePaySlip@'+empid);
 
@@ -32,7 +32,20 @@ module.exports = {
             name: name,
             employer: employer,
             month: month,
-            year: year
+            year: year,
+            designation: designation,
+            bank: bank,
+            accountNumber: accountNumber,
+            pan: pan,
+            basicPay: basicPay,
+            hra: hra,
+            lta: lta,
+            ma: ma,
+            providentFund: providentFund,
+            professionalTax: professionalTax,
+            grossSalary: grossSalary,
+            totalDeductions: totalDeductions,
+            netSalary: netSalary
         }
 
         app.sdb.create("payslip", paySlip);

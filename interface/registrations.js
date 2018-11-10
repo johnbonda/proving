@@ -83,26 +83,7 @@ app.route.post('/userlogin', async function (req, cb) {
         password: req.query.password
     };
     var response = await BKVSCall.call('POST', `/api/v1/login`, ac_params);// Call: http://54.254.174.74:8080
-    if(response.isSuccess===true)
-    {
-        var params={
-            secret:req.query.secret,
-            countryCode:req.query.countryCode
-        }
-        var innerresponse = await BKVSCall.call('POST', `/api/v1/hyperledger/login`, params);// Call: http://54.254.174.74:8080
-        if(innerresponse.isSuccess===true)
-        {
-            return JSON.stringify(response);
-        }
-        else
-        {
-            return "failed in secret";
-        }
-    }
-    else
-    {
-        return "failed in login";
-    }
+    return response;
  });//BKVS Signup
  app.route.post('/usersignup', async function (req, cb) {
     var params={

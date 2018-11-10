@@ -24,14 +24,14 @@ module.exports = {
     },
 
     getHash: function(data){
-        let buffer = new ByteBuffer(1000, true);
-            // for(x in data){
-            //     buffer.writeString(data[x]);
-            // }
+        // let buffer = new ByteBuffer(1000, true);
+        //     // for(x in data){
+        //     //     buffer.writeString(data[x]);
+        //     // }
 
-        buffer.writeCString(data); 
+        // buffer.writeCString(data); 
     
-            return  crypto.createHash('sha256').update(buffer.toBuffer()).digest();
+            return  crypto.createHash('sha256').update(data).digest(); //buffer.toBuffer()
     },
     
     getSignature: function(data, secret){

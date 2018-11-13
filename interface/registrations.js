@@ -95,14 +95,7 @@ app.route.post('/userlogin', async function (req, cb) {
         type:req.query.type
     }
     var response = await BKVSCall.call('POST', `/api/v1/signup`, params);// Call: http://54.254.174.74:8080
-    if(response.isSuccess===true)
-    {
-        return "success";
-    }
-    else
-    {
-        return "failed";
-    }
+    return response;
 
  });//BKVS Signup
 //  app.route.post('/usersecretLogin', async function (req, cb) {
